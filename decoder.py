@@ -14,7 +14,7 @@ from sqlalchemy import create_engine;
 from pushbullet import Pushbullet;
 
 
-pb = Pushbullet('o.RAYC4MAFRyJz4Xh2VHYvgt93gs38aeGp')
+pb = Pushbullet('')
 
 
 
@@ -49,9 +49,9 @@ def fuzzy_merge(df_1, df_2, key1, key2, threshold=90, limit=1):
 
 
 mydb = mysql.connector.connect(
-  host="68.198.26.175",
+  host="",
   user="root",
-  passwd="Nv0ev0din!",
+  passwd="",
   database = 'plagueDB'
 )
 
@@ -64,9 +64,9 @@ fhv = pd.read_csv('https://data.cityofnewyork.us/api/views/8wbx-tsch/rows.csv?ac
 print('fhv success')
 
 client = Socrata("data.cityofnewyork.us",
-                 "nUTPEH7ARGaLrk4pdawfZzRnK",
-                 username="voevodin.nv@gmail.com",
-                 password="Nv03041990!")
+                 "",
+                 username="",
+                 password="")
 
 
 today = date.today()
@@ -301,9 +301,9 @@ if len(results_df) > 0:
     df = df.merge(finalData, on='vin', how='left')
 
 
-    engine = create_engine("mysql+pymysql://{user}:{pw}@68.198.26.175/{db}"
+    engine = create_engine("mysql+pymysql://{user}:{pw}@/{db}"
                           .format(user="root",
-                                  pw="Nv0ev0din!",
+                                  pw="",
                                   db="plagueDB"))
 
 
