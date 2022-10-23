@@ -1,6 +1,6 @@
 # pyDecoder
 
-This vin decoder tracks active vehicles in the TLC fleet and removes the ones that are not active anymore from the database. Because of the lack of a unique identifier match between the fuel dataset that gets pulled from the fueleconomy.gov and TLC database, a fuzzymerge algorythm looks for and grades matches by multiple data points before joining these tables. Result is a clean dataset that gets used by the agancy' analysts. 
+This vin decoder tracks active vehicles in the TLC fleet and removes the ones that are not active anymore from the database. Because of the lack of a unique identifier match between the fuel dataset that gets pulled from the fueleconomy.gov and TLC database, a fuzzymerge algorythm looks for and grades matches by multiple data points before joining these tables. Result is a clean dataset that gets used by the agency' analysts. 
 
 # Requirements
 
