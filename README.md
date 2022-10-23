@@ -13,7 +13,7 @@ This vin decoder tracks active vehicles in the TLC fleet and removes the ones th
 
 2. What problem the project aims to solve
 
-The project is a response to the challenges that the data team is facing day-to-day when working with the existing infrastructure. We work in a fast-paced environment and must be able to quickly answer data questions coming from within and outside of the agency. One of those questions is how many active vehicles do we have, what are those vehicles, who many are EVs and what are their mps? Some of that info is not available to us internally. We needed to build an algo to get that data.   
+The project is a response to the challenges that the data team is facing day-to-day when working with the existing infrastructure. We work in a fast-paced environment and must be able to quickly answer data questions coming from within and outside of the agency. One of those questions is how many active vehicles do we have, what are those vehicles, who many are EVs and what are their mpgs? Some of that info is not available to us internally. We needed to build an algo to get that data.   
 
 3. Timeframes (start date, deadline...)
 
@@ -101,15 +101,21 @@ This is a big project and it had a few major stages:
 
 Minimal use example (Step by step). If not applicable - explain why.
 
-## Industry Indicators
-The Industry Indicators Table is one of 55 current reports maintained by the DW. Industry Indicators are a set of published metrics that are updated every month and reviewed with the commissioner before releasing to the public. They cover a myriad of relevant metrics for the industries we regulate.
-
 ### Usecases
 
-The Industry Indicators is one of the most important datasets that the Policy Division produces. It informs our policy decisions, used by outside stakeholders, and feeds multiple public tools that we developed and maintain. To help you better understand the pipelines that make this and other reports happen here are a couple of diagrams:
+In 2018 TLC imposed a cap on how many for-hire licenses it can have active. That policy gets revieved by the policy/data division every year and a report/recommendation is produced. The report either allows for more vehicles or upholds the cap. The report can create exception such as allowing n number of electric or wheelchair accessible vehicle licenses to be permitted. This script is the backbone for these recommendations. It allows for accurate account of, for example, electric vehicles in our fleet. 
 
-## TLC TRIP DATA FLOW
+## Decoder Data Flow
 
+```mermaid
+graph TD
+    Licensing[Licensing/Inspection <br> Facilities] -->|Update| OD(NYC Open Data <br> active Taxies and FHVs)
+    OD--> |Pulled into| Script{Decoder Script}
+    Decoder -->|Pushes active <br> vin nums through:| NHTSA[NHTSA API]
+    NHTSA -->|result merged <br> with| fuel[FuelEconomy.gov data]
+    fuel -->|stored every <br> day| DW[TLC DataWarehouse]
+
+```
 
 # Data Classification
 
