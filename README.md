@@ -13,7 +13,7 @@ This vin decoder tracks active vehicles in the TLC fleet and removes the ones th
 
 2. What problem the project aims to solve
 
-The project is a response to the challenges that the data team is facing day-to-day when working with the existing infrastructure. We work in a fast-paced environment and must be able to quickly answer data questions coming from within and outside of the agency. One of those questions is how many active vehicles do we have, what are those vehicles, who many are EVs and what are their mpgs? Some of that info is not available to us internally. We needed to build an algo to get that data.   
+The project is a response to the challenges that the data team is facing day-to-day when working with the existing infrastructure. We work in a fast-paced environment and must be able to quickly answer data questions coming from within and outside of the agency. One of those questions is how many active vehicles do we have, what are those vehicles, how many are EVs and what are their mpgs? Some of that info is not available to us internally. We needed to build an algo to get that data.   
 
 3. Timeframes (start date, deadline...)
 
